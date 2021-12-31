@@ -73,12 +73,12 @@ public class AllUsersPage  extends BaseClass{
 	public void setUserSecurityProfile(String UserSecurityProfile) 
 	{
 		Select select = new Select(cmbUserSecurityRole);		
-		select.selectByValue(UserSecurityProfile);
+		select.selectByVisibleText(UserSecurityProfile);
 	}
 	public void setUserRole(String userRole) 
 	{
 		Select select = new Select(cmbUserRole);		
-		select.selectByValue(userRole);
+		select.selectByVisibleText(userRole);
 	}
 	public void setFirstName(String firstname) 
 	{
@@ -88,7 +88,7 @@ public class AllUsersPage  extends BaseClass{
 	public void setUserLanguage(String userLanguage) 
 	{
 		Select select = new Select(cmdUserLanguage);		
-		select.selectByValue(userLanguage);
+		select.selectByVisibleText(userLanguage);
 	}	
 	public void setLastName(String lastName) 
 	{
@@ -98,12 +98,12 @@ public class AllUsersPage  extends BaseClass{
 	public void setTimeZone(String timezone) 
 	{
 		Select select = new Select(cmbTimeZone);		
-		select.selectByValue(timezone);
+		select.selectByVisibleText(timezone);
 	}
 	public void setEmail(String email) 
 	{
-		txtLastName.clear();
-		txtLastName.sendKeys(email);
+		txtEmail.clear();
+		txtEmail.sendKeys(email);
 	}
 	public void checkMobileAccessChecbox() 
 	{
