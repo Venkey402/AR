@@ -19,7 +19,7 @@ public class TC_CreateUser_001 extends BaseClass{
 	HomePage hp ;
 	AllUsersPage aup;
 	AdvancedReporting ar;
-	@Test
+	@Test(priority=1)
 	public void createUser() throws InterruptedException
 	{
 		lp = new LoginPage(driver);
@@ -48,9 +48,15 @@ public class TC_CreateUser_001 extends BaseClass{
 		aup.checkMobileAccessChecbox();
 		aup.checkAddToAudienceChecbox();
 		aup.clickSave(); 
-		aup.returntoAllUsers();
+		aup.returntoAllUsers();		
+		driver.switchTo().defaultContent();
 		
-		//ar=hp.NavigateToAdvancedReporting();
+	}
+	
+	@Test(priority=2)
+	public void TC_RunningAReportInAR() throws InterruptedException
+	{
+		ar=hp.NavigateToAdvancedReporting();
 	}
 	
 }
