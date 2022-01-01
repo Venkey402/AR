@@ -54,7 +54,7 @@ public class TC_CreateUser_001 extends BaseClass{
 	}
 	
 	@Test(priority=2)
-	public void TC_RunningAReportInAR() throws InterruptedException
+	public void TC_RunningAReportInAR_002() throws InterruptedException
 	{
 		ar=hp.NavigateToAdvancedReporting();
 	}
