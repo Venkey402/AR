@@ -1,5 +1,9 @@
 package com.ar.testcases;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,19 +23,24 @@ public class TC_CreateUser_001 extends BaseClass{
 	public void createUser() throws InterruptedException
 	{
 		lp = new LoginPage(driver);
-		
+		lp.validateLoginPageTitle();
 		lp.setUsername("Admin");
 		lp.setPassword("Vervet^Fitch");
 		hp =lp.clickLogin();
+		hp.validateHomePageTitle();		
 		aup=hp.NavigateToAllUsers();
 		Thread.sleep(5000);
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe")));
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy_HHmmss");  
+	    Date date = new Date();  
+	    String DateTime=formatter.format(date); 
 		aup.clickCreateUser();
-		aup.setLoginName("venkat");
+		aup.validateAllUsersPageTitle();
+		aup.setLoginName("venkat"+DateTime);
 		aup.setPassword("p");
 		aup.setUserSecurityProfile("System - Administrator");
-		aup.setFirstName("venkat");
-		aup.setLastName("venkat");
+		aup.setFirstName("venkat"+DateTime);
+		aup.setLastName("venkat"+DateTime);
 		aup.setUserRole("Administrator");
 		aup.setUserLanguage("English (United States)");
 		aup.setTimeZone("(UTC+01:00:00) Europe/Amsterdam");

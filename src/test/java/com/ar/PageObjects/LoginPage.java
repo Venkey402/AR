@@ -8,21 +8,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.ar.testcases.BaseClass;
 
 public class LoginPage extends BaseClass{
 	
 	WebDriver driver;
-	Logger logger;
+	//Logger logger;
 	
 	// Constrcutor..
 	public LoginPage(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		logger = Logger.getLogger("Advanced Reporting");
-		PropertyConfigurator.configure("log4j.properties");
 	}
 
 	// Page Objects 
@@ -35,6 +34,12 @@ public class LoginPage extends BaseClass{
 	WebElement btnSignIn;
 	
 	// Action methods 
+	
+	public void validateLoginPageTitle()
+	{
+		Assert.assertEquals(driver.getTitle(), "Sign In");
+		logger.info("Login Page title is matched...");
+	}
 	
 	public void setUsername(String username)
 	{		

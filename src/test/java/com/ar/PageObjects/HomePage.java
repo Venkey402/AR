@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.ar.testcases.BaseClass;
 
@@ -20,8 +21,6 @@ public class HomePage extends BaseClass {
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		logger = Logger.getLogger("Advanced Reporting");
-		PropertyConfigurator.configure("log4j.properties");
 	}
 	
 	// Page Objects
@@ -40,6 +39,12 @@ public class HomePage extends BaseClass {
 	
 	//Action methods
 	
+	public void validateHomePageTitle()
+	{
+		Assert.assertEquals(driver.getTitle(), "Home - SumTotal");
+		logger.info("Home Page title is matched...");
+	}
+	
 	public AllUsersPage NavigateToAllUsers() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -53,12 +58,11 @@ public class HomePage extends BaseClass {
 	
 	public AdvancedReporting NavigateToAdvancedReporting() throws InterruptedException
 	{
-		Actions action = new Actions(driver);
+		
 		linkSelf.click();
 		linkSelf_Reporting.click();
 		linkSelf_Reporting_AdvancedReporting.click();
 		Thread.sleep(5000);
-		//action.moveToElement(linkAdministation).click(linkAllUsers).build().perform();		
 		return new AdvancedReporting(driver);
 	}
 

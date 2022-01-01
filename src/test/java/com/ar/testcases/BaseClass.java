@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeSuite;
 public class BaseClass {
 	
 	public WebDriver driver;
-	public Logger logger;
+	public static Logger logger;
 	@BeforeSuite
 	public void setUp()
 	{
