@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 70.573 sec <<< FAILURE! - in TestSuite
+createUser(com.ar.testcases.TC_CreateUser_001)  Time elapsed: 62.889 sec  <<< FAILURE!
+java.lang.AssertionError: expected [Home - SumTotal] but found [All Users - Administration - SumTotal]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at com.ar.PageObjects.AllUsersPage.validateAllUsersPageTitle(AllUsersPage.java:150)
+	at com.ar.testcases.TC_CreateUser_001.createUser(TC_CreateUser_001.java:38)
+

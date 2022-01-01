@@ -48,8 +48,9 @@ public class TC_CreateUser_001 extends BaseClass{
 		aup.checkMobileAccessChecbox();
 		aup.checkAddToAudienceChecbox();
 		aup.clickSave(); 
+		aup.returntoAllUsers();
 		
-		ar=hp.NavigateToAdvancedReporting();
+		//ar=hp.NavigateToAdvancedReporting();
 	}
 	
 }

@@ -49,6 +49,10 @@ public class AllUsersPage  extends BaseClass{
 	WebElement chkAddToAudience;
 	@FindBy(how=How.NAME,using="submit")
 	WebElement btnSave;
+	@FindBy(how=How.XPATH,using="//span[text()='Return to User List']")
+	WebElement btnReturnToUsersList;
+	
+	
 	//Action methods
 	
 	public void clickCreateUser() throws InterruptedException 
@@ -147,7 +151,13 @@ public class AllUsersPage  extends BaseClass{
 	}
 	public void validateAllUsersPageTitle()
 	{
-		Assert.assertEquals(driver.getTitle(), "Home - SumTotal");
+		Assert.assertEquals(driver.getTitle(), "All Users - Administration - SumTotal");
 		logger.info("All users Page title is matched...");
 	}
+	public void returntoAllUsers()
+	{
+		btnReturnToUsersList.click();
+		logger.info("Clicked on the return to users list button...");
+	}
+	
 }
