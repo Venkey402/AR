@@ -2,44 +2,51 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-03T11:50:49 IST" name="Suite : Advanced Reporting" finished-at="2022-01-03T11:54:09 IST" duration-ms="200343">
+  <suite started-at="2022-01-03T12:56:24 IST" name="Suite : Advanced Reporting" finished-at="2022-01-03T12:57:25 IST" duration-ms="61320">
     <groups>
     </groups>
-    <test started-at="2022-01-03T11:50:49 IST" name="test : Advanced Reporting" finished-at="2022-01-03T11:54:09 IST" duration-ms="200343">
+    <test started-at="2022-01-03T12:56:24 IST" name="Test : Advanced Reporting" finished-at="2022-01-03T12:57:25 IST" duration-ms="61320">
       <class name="com.ar.testcases.ValidateAR">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:49:49 IST" name="setUp" finished-at="2022-01-03T11:50:49 IST" duration-ms="59692" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:56:18 IST" name="setUp" finished-at="2022-01-03T12:56:24 IST" duration-ms="5681" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:50:51 IST" name="login" finished-at="2022-01-03T11:51:12 IST" duration-ms="21412" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:56:24 IST" name="login" finished-at="2022-01-03T12:56:28 IST" duration-ms="4335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="TC_CreateUser_001()[pri:1, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:51:12 IST" name="TC_CreateUser_001" finished-at="2022-01-03T11:52:58 IST" duration-ms="106392" status="PASS">
+        <test-method signature="TC_CreateUser_001()[pri:1, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:56:28 IST" name="TC_CreateUser_001" finished-at="2022-01-03T12:57:05 IST" duration-ms="37368" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_CreateUser_001 -->
-        <test-method is-config="true" signature="signout()[pri:0, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:52:59 IST" name="signout" finished-at="2022-01-03T11:53:06 IST" duration-ms="6959" status="PASS">
+        <test-method is-config="true" signature="signout()[pri:0, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:57:05 IST" name="signout" finished-at="2022-01-03T12:57:08 IST" duration-ms="2465" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signout -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:53:06 IST" name="login" finished-at="2022-01-03T11:53:19 IST" duration-ms="13493" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:57:08 IST" name="login" finished-at="2022-01-03T12:57:10 IST" duration-ms="2065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="TC_RunningAReportInAR_002()[pri:2, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:53:19 IST" name="TC_RunningAReportInAR_002" finished-at="2022-01-03T11:54:01 IST" duration-ms="41736" status="PASS">
+        <test-method signature="TC_RunningAReportInAR_002()[pri:2, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:57:10 IST" name="TC_RunningAReportInAR_002" finished-at="2022-01-03T12:57:22 IST" duration-ms="12271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_RunningAReportInAR_002 -->
-        <test-method is-config="true" signature="signout()[pri:0, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:54:01 IST" name="signout" finished-at="2022-01-03T11:54:09 IST" duration-ms="8475" status="PASS">
+        <test-method is-config="true" signature="signout()[pri:0, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:57:22 IST" name="signout" finished-at="2022-01-03T12:57:25 IST" duration-ms="2645" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ar.testcases.ValidateAR@bd4dc25]" started-at="2022-01-03T11:54:12 IST" name="tearDown" finished-at="2022-01-03T11:54:15 IST" duration-ms="2104" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ar.testcases.ValidateAR@4d465b11]" started-at="2022-01-03T12:57:25 IST" name="tearDown" finished-at="2022-01-03T12:57:26 IST" duration-ms="853" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.ar.testcases.ValidateAR -->
-    </test> <!-- test : Advanced Reporting -->
+    </test> <!-- Test : Advanced Reporting -->
   </suite> <!-- Suite : Advanced Reporting -->
 </testng-results>

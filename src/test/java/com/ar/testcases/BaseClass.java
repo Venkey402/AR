@@ -11,6 +11,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
 import com.ar.PageObjects.HomePage;
 import com.ar.PageObjects.LoginPage;
 import com.ar.utilities.ReadConfig;
@@ -27,7 +29,8 @@ public class BaseClass {
 	String password;
 	
 	@BeforeSuite
-	public void setUp() throws IOException
+	@Parameters("HeadlessFlag")
+	public void setUp(String HeadlessFlag) throws IOException
 	{
 		logger = Logger.getLogger("Advanced Reporting");
 		PropertyConfigurator.configure("log4j.properties");
@@ -40,13 +43,17 @@ public class BaseClass {
 		logger.info("Read the username "+username+" from the config.properties file...");
 		password = rc.getPassword();		
 		logger.info("Read the password "+password+" from the config.properties file...");
-		/*
-		 */ ChromeOptions options = new ChromeOptions();
-		  options.addArguments("Headless");		
-		  driver = new ChromeDriver(options); 
-		 
 		
-		//driver = new ChromeDriver();
+		if(HeadlessFlag.equalsIgnoreCase("Yes"))
+		{		
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("Headless");		
+			driver = new ChromeDriver(options); 
+		}
+		else
+		{
+			driver = new ChromeDriver();
+		}
 		logger.info("Initiated the chrome driver location...");
 		driver.get(baseUrl);
 		logger.info("Navigated to "+baseUrl+"...");

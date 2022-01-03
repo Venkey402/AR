@@ -156,14 +156,15 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite : Advanced Reporting&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;HeadlessFlag&quot; value=&quot;No&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.ar.utilities.Reporting&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;test : Advanced Reporting&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test : Advanced Reporting&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.ar.testcases.ValidateAR&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- test : Advanced Reporting --&gt;
+  &lt;/test&gt; &lt;!-- Test : Advanced Reporting --&gt;
 &lt;/suite&gt; &lt;!-- Suite : Advanced Reporting --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -175,7 +176,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">test : Advanced Reporting (1 class)</span>
+                <span class="test-name">Test : Advanced Reporting (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -205,16 +206,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TC_CreateUser_001')
 data.setCell(0, 2, 'com.ar.testcases.ValidateAR')
-data.setCell(0, 3, 106392);
+data.setCell(0, 3, 37368);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'TC_RunningAReportInAR_002')
 data.setCell(1, 2, 'com.ar.testcases.ValidateAR')
-data.setCell(1, 3, 41736);
+data.setCell(1, 3, 12271);
 window.suiteTableData['Suite___Advanced_Reporting']= { tableData: data, tableDiv: 'times-div-Suite___Advanced_Reporting'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 49 seconds</span>
               <div id="times-div-Suite___Advanced_Reporting">
               </div> <!-- times-div-Suite___Advanced_Reporting -->
             </div> <!-- times-div -->
@@ -242,36 +243,36 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.ar.testcases.ValidateAR</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setUp</span>
+                <span class="method-name">setUp(No)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">login</span>
-                <span class="method-start">61432 ms</span>
+                <span class="method-start">5834 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TC_CreateUser_001</span>
-                <span class="method-start">82849 ms</span>
+                <span class="method-start">10170 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">signout</span>
-                <span class="method-start">189349 ms</span>
+                <span class="method-start">47552 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">login</span>
-                <span class="method-start">196323 ms</span>
+                <span class="method-start">50019 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TC_RunningAReportInAR_002</span>
-                <span class="method-start">209817 ms</span>
+                <span class="method-start">52084 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">signout</span>
-                <span class="method-start">251562 ms</span>
+                <span class="method-start">64356 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">263183 ms</span>
+                <span class="method-start">67224 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
