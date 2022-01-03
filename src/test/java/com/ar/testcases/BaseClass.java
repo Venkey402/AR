@@ -7,6 +7,11 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -28,34 +33,66 @@ public class BaseClass {
 	String password;
 	
 	@BeforeSuite
-	@Parameters("HeadlessFlag")
-	public void setUp(String HeadlessFlag) throws IOException
+	@Parameters({"HeadlessFlag","Browser"})
+	public void setUp(String HeadlessFlag,String Browser) throws IOException
 	{
 		logger = Logger.getLogger("Advanced Reporting");
 		PropertyConfigurator.configure("log4j.properties");
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
-		logger.info("Set the chrome driver location...");
 		rc = new ReadConfig();
 		baseUrl = rc.getBaseUrl();
-		logger.info("Read the base url "+baseUrl+" from the config.properties file...");
+		logger.info("Read the base url '"+baseUrl+"' from the config.properties file...");
 		username = rc.getUsername();
-		logger.info("Read the username "+username+" from the config.properties file...");
+		logger.info("Read the username '"+username+"' from the config.properties file...");
 		password = rc.getPassword();		
-		logger.info("Read the password "+password+" from the config.properties file...");
+		logger.info("Read the password '"+password+"' from the config.properties file...");
 		
 		if(HeadlessFlag.equalsIgnoreCase("Yes"))
-		{		
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("Headless");		
-			driver = new ChromeDriver(options); 
+		{	
+			if(Browser.equalsIgnoreCase("safari"))
+			{
+				SafariOptions options = new SafariOptions();
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//IEDriverServer.exe");
+				driver = new SafariDriver(options); 
+				
+			}
+			else if(Browser.equalsIgnoreCase("chrome"))
+			{
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("Headless");		
+				driver = new ChromeDriver(options); 
+			}
+			else if(Browser.equalsIgnoreCase("firefox"))
+			{
+				System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
+				FirefoxOptions options = new FirefoxOptions();
+				options.addArguments("Headless");		
+				driver = new FirefoxDriver(options); 
+			}
+			logger.info(Browser+" browser is opened in Headless mode... ");
 		}
 		else
 		{
-			driver = new ChromeDriver();
+			if(Browser.equalsIgnoreCase("IE"))
+			{
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//IEDriverServer.exe");
+				driver = new InternetExplorerDriver();
+			}
+			else if(Browser.equalsIgnoreCase("chrome"))
+			{
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
+				driver = new ChromeDriver();
+			}
+			else if(Browser.equalsIgnoreCase("firefox"))
+			{
+				System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
+				driver = new FirefoxDriver();
+			}
+			logger.info(Browser+" browser is opened in normal mode... ");
 		}
 		logger.info("Initiated the chrome driver location...");
 		driver.get(baseUrl);
-		logger.info("Navigated to "+baseUrl+"...");
+		logger.info("Navigated to '"+baseUrl+"'...");
 		driver.manage().window().maximize();
 		logger.info("Window got maximized...");
 		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);

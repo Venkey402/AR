@@ -61,61 +61,61 @@ public class AllUsersPage  extends BaseClass{
 	public void setLoginName(String loginName) 
 	{
 		txtLoginName.clear();
-		logger.info("text got cleared in login name textbox...");
+		logger.info("Cleared the text in login name textbox...");
 		txtLoginName.sendKeys(loginName);
-		logger.info("login name is typed in the login name textbox...");
+		logger.info("'"+loginName+"'"+" is typed in the login name textbox...");
 	}
 	public void setPassword(String password) 
 	{
 		txtPassword.clear();
-		logger.info("text got cleared in password textbox...");
+		logger.info("Cleared the text in password textbox...");
 		txtPassword.sendKeys(password);
-		logger.info("login name is typed in the password textbox...");
+		logger.info("'"+password+"'"+" is typed in the password textbox...");
 	}
 	public void setUserSecurityProfile(String UserSecurityProfile) 
 	{
 		Select select = new Select(cmbUserSecurityRole);		
 		select.selectByVisibleText(UserSecurityProfile);
-		logger.info("User security profile selected...");
+		logger.info("'"+UserSecurityProfile+"'"+" User security profile is selected from the dropdown...");
 	}
 	public void setUserRole(String userRole) 
 	{
 		Select select = new Select(cmbUserRole);		
 		select.selectByVisibleText(userRole);
-		logger.info("User role selected...");
+		logger.info("'"+userRole+"'"+" user role selected is selected from the dropdown...");
 	}
 	public void setFirstName(String firstname) 
 	{
 		txtFirstName.clear();
-		logger.info("text got cleared in firstname textbox...");
+		logger.info("Cleared the text in firstname textbox...");
 		txtFirstName.sendKeys(firstname);
-		logger.info("firstname is typed in the firstname textbox...");
+		logger.info("'"+firstname+"'"+" typed in the firstname textbox...");
 	}
 	public void setUserLanguage(String userLanguage) 
 	{
 		Select select = new Select(cmdUserLanguage);		
 		select.selectByVisibleText(userLanguage);
-		logger.info("User language is selected...");
+		logger.info("'"+userLanguage+"'"+" user language is selected...");
 	}	
 	public void setLastName(String lastName) 
 	{
 		txtLastName.clear();
-		logger.info("text got cleared in firstname textbox...");
+		logger.info("Cleared the text in lastName textbox...");
 		txtLastName.sendKeys(lastName);
-		logger.info("lastname is typed in the lastname textbox...");
+		logger.info("'"+lastName+"'"+" is typed in the lastname textbox...");
 	}
 	public void setTimeZone(String timezone) 
 	{
 		Select select = new Select(cmbTimeZone);		
 		select.selectByVisibleText(timezone);
-		logger.info("timezone is selected...");
+		logger.info("'"+timezone+"'"+" is selected from the dropdown...");
 	}
 	public void setEmail(String email) 
 	{
 		txtEmail.clear();
-		logger.info("text got cleared in email textbox...");
+		logger.info("Cleared the text in the email textbox...");
 		txtEmail.sendKeys(email);
-		logger.info("email is typed in the email textbox...");
+		logger.info("'"+email+"'"+" is typed in the email textbox...");
 	}
 	public void checkMobileAccessChecbox() 
 	{

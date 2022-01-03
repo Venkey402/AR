@@ -42,9 +42,7 @@ public class ValidateAR extends BaseClass{
 		aup.checkAddToAudienceChecbox();
 		aup.clickSave(); 
 		aup.returntoAllUsers();		
-		driver.switchTo().defaultContent();	
-		
-		//readfromExcel(System.getProperty("user.dir")+"//","Sheet1");
+		driver.switchTo().defaultContent();			
 	}
 	
 	@Test(priority=2)
@@ -61,5 +59,4 @@ public class ValidateAR extends BaseClass{
 		String SheetName = "Sheet1";		
 		return xlutil.readfromExcel(testdatapath,SheetName);
 	}
-
 }

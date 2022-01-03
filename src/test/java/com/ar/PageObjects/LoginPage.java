@@ -40,16 +40,16 @@ public class LoginPage extends BaseClass{
 	public void setUsername(String username)
 	{		
 		txtUsername.clear();
-		logger.info("text got cleared in username textbox...");
+		logger.info("Cleared the text in username textbox...");
 		txtUsername.sendKeys(username);
-		logger.info("username is typed in the username textbox...");
+		logger.info("'"+username+"'"+" is typed in the username textbox...");
 	}
 	public void setPassword(String password)
 	{
 		txtPassword.clear();
-		logger.info("text got cleared in password textbox...");
+		logger.info("Cleared the text in password textbox...");
 		txtPassword.sendKeys(password);
-		logger.info("password is typed in the password textbox...");
+		logger.info("'"+password+"'"+" is typed in the password textbox...");
 	}
 	public HomePage clickLogin()
 	{
