@@ -64,7 +64,7 @@ public class BaseClass {
 			}
 			else if(Browser.equalsIgnoreCase("firefox"))
 			{
-				System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
 				FirefoxOptions options = new FirefoxOptions();
 				options.addArguments("Headless");		
 				driver = new FirefoxDriver(options); 
@@ -85,7 +85,7 @@ public class BaseClass {
 			}
 			else if(Browser.equalsIgnoreCase("firefox"))
 			{
-				System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
 				driver = new FirefoxDriver();
 			}
 			logger.info(Browser+" browser is opened in normal mode... ");

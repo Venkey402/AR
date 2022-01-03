@@ -33,6 +33,8 @@ public class LoginPage extends BaseClass{
 	
 	public void validateLoginPageTitle()
 	{
+		txtUsername.isDisplayed();
+		logger.info("Checked username textbox is present in the login page...");
 		Assert.assertEquals(driver.getTitle(), "Sign In");
 		logger.info("Login Page title is matched...");
 	}

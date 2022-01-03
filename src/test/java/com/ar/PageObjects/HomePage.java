@@ -43,6 +43,8 @@ public class HomePage extends BaseClass {
 	
 	public void validateHomePageTitle()
 	{
+		linkAdministation.isDisplayed();
+		logger.info("Checked administration link is present in the homepage...");
 		Assert.assertEquals(driver.getTitle(), "Home - SumTotal");
 		logger.info("Home Page title is matched...");
 	}
