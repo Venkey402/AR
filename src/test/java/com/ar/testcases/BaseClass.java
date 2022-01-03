@@ -88,7 +88,7 @@ public class BaseClass {
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
 				driver = new FirefoxDriver();
 			}
-			logger.info(Browser+" browser is opened in normal mode... ");
+			logger.info(Browser.toUpperCase()+" browser is opened in normal mode... ");
 		}
 		logger.info("Initiated the chrome driver location...");
 		driver.get(baseUrl);

@@ -54,7 +54,6 @@ public class AllUsersPage  extends BaseClass{
 	
 	public void clickCreateUser() throws InterruptedException 
 	{
-		Thread.sleep(5000);
 		btnCreateUser.click();
 		logger.info("Clicked on the create user button...");
 	}
