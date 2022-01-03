@@ -1,37 +1,55 @@
 package com.ar.testcases;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
-
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import com.ar.PageObjects.HomePage;
+import com.ar.PageObjects.LoginPage;
+import com.ar.utilities.ReadConfig;
 
 public class BaseClass {
 	
 	public WebDriver driver;
 	public static Logger logger;
+	LoginPage lp;
+	HomePage hp ;
+	ReadConfig rc;
+	String baseUrl;
+	String username;
+	String password;
+	
 	@BeforeSuite
-	public void setUp()
+	public void setUp() throws IOException
 	{
 		logger = Logger.getLogger("Advanced Reporting");
 		PropertyConfigurator.configure("log4j.properties");
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 		logger.info("Set the chrome driver location...");
-		
+		rc = new ReadConfig();
+		baseUrl = rc.getBaseUrl();
+		logger.info("Read the base url "+baseUrl+" from the config.properties file...");
+		username = rc.getUsername();
+		logger.info("Read the username "+username+" from the config.properties file...");
+		password = rc.getPassword();		
+		logger.info("Read the password "+password+" from the config.properties file...");
 		/*
-		 * ChromeOptions options = new ChromeOptions();
-		 * options.addArguments("Headless");		
-		 * driver = new ChromeDriver(options); 
-		 */
+		 */ ChromeOptions options = new ChromeOptions();
+		  options.addArguments("Headless");		
+		  driver = new ChromeDriver(options); 
+		 
 		
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
 		logger.info("Initiated the chrome driver location...");
-		driver.get("https://au05sales.sumtotaldevelopment.net/");
-		logger.info("Navigated to https://au05sales.sumtotaldevelopment.net/...");
+		driver.get(baseUrl);
+		logger.info("Navigated to "+baseUrl+"...");
 		driver.manage().window().maximize();
 		logger.info("Window got maximized...");
 		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
@@ -46,5 +64,21 @@ public class BaseClass {
 		logger.info("Driver is quitted...");
 	}
 	
-
+	@BeforeMethod
+	public void login()
+	{
+		lp = new LoginPage(driver);
+		driver.get(baseUrl);
+		lp.validateLoginPageTitle();		
+		lp.setUsername(username);
+		lp.setPassword(password);
+		hp =lp.clickLogin();
+		hp.validateHomePageTitle();		
+	}
+	
+	@AfterMethod
+	public void signout()
+	{
+		lp=hp.SignOut();
+	}
 }

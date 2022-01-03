@@ -6,8 +6,9 @@
       <class name="com.ar.testcases.TC_CreateUser_001">
         <methods>
           <include name="setUp"/>
-          <include name="createUser"/>
+          <include name="TC_RunningAReportInAR_002"/>
           <include name="tearDown"/>
+          <include name="login"/>
         </methods>
       </class> <!-- com.ar.testcases.TC_CreateUser_001 -->
     </classes>

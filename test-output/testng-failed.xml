@@ -6,13 +6,16 @@
   </listeners>
   <test thread-count="5" name="test : Advanced Reporting(failed)">
     <classes>
-      <class name="com.ar.testcases.TC_CreateUser_001">
+      <class name="com.ar.testcases.ValidateAR">
         <methods>
+          <include name="TC_RunningAReportInAR_002"/>
           <include name="setUp"/>
-          <include name="createUser"/>
+          <include name="signout"/>
+          <include name="TC_CreateUser_001"/>
           <include name="tearDown"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- com.ar.testcases.TC_CreateUser_001 -->
+      </class> <!-- com.ar.testcases.ValidateAR -->
     </classes>
   </test> <!-- test : Advanced Reporting(failed) -->
 </suite> <!-- Failed suite [Suite : Advanced Reporting] -->

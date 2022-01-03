@@ -1,8 +1,5 @@
 package com.ar.PageObjects;
 
-import java.util.logging.Logger;
-
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,6 +32,11 @@ public class HomePage extends BaseClass {
 	WebElement linkSelf_Reporting;
 	@FindBy(how=How.XPATH,using="//a/span[text()='Advanced Reporting']")
 	WebElement linkSelf_Reporting_AdvancedReporting;
+	@FindBy(how=How.XPATH,using="//div[contains(@class,'MuiAvatar-root MuiAvatar')]")
+	WebElement IconSingoutProfile;
+	@FindBy(how=How.XPATH,using="//span[text()='Signout']")
+	WebElement btnSignout;
+	
 	
 	
 	//Action methods
@@ -52,7 +54,7 @@ public class HomePage extends BaseClass {
 		logger.info("Action class is initiated...");
 		linkAdministation.click();
 		action.moveToElement(linkAllUsers).click(linkAllUsers).build().perform();		
-		logger.info("Navigated to Administration_AllUsers...");
+		logger.info("Navigated to Users > All users...");
 		return new AllUsersPage(driver);
 	}
 	
@@ -62,8 +64,18 @@ public class HomePage extends BaseClass {
 		linkSelf.click();
 		linkSelf_Reporting.click();
 		linkSelf_Reporting_AdvancedReporting.click();
+		logger.info("Navigated to Self > Reporting > Advanced reporting...");
 		Thread.sleep(5000);
 		return new AdvancedReporting(driver);
+	}
+	
+	public LoginPage SignOut()
+	{
+		IconSingoutProfile.click();
+		logger.info("Clicked on the profile icon...");
+		btnSignout.click();
+		logger.info("Clicked on the sign out...");
+		return new LoginPage(driver);
 	}
 
 }

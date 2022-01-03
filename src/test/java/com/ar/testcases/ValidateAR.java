@@ -1,33 +1,19 @@
 package com.ar.testcases;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import com.ar.PageObjects.AdvancedReporting;
 import com.ar.PageObjects.AllUsersPage;
-import com.ar.PageObjects.HomePage;
-import com.ar.PageObjects.LoginPage;
 
-public class TC_CreateUser_001 extends BaseClass{
-	LoginPage lp;
-	HomePage hp ;
+
+public class ValidateAR extends BaseClass{
 	AllUsersPage aup;
 	AdvancedReporting ar;
 	@Test(priority=1)
-	public void createUser() throws InterruptedException
-	{
-		lp = new LoginPage(driver);
-		lp.validateLoginPageTitle();
-		lp.setUsername("Admin");
-		lp.setPassword("Vervet^Fitch");
-		hp =lp.clickLogin();
-		hp.validateHomePageTitle();		
+	public void TC_CreateUser_001() throws InterruptedException
+	{		
 		aup=hp.NavigateToAllUsers();
 		Thread.sleep(5000);
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe")));
@@ -49,14 +35,12 @@ public class TC_CreateUser_001 extends BaseClass{
 		aup.checkAddToAudienceChecbox();
 		aup.clickSave(); 
 		aup.returntoAllUsers();		
-		driver.switchTo().defaultContent();
-		
+		driver.switchTo().defaultContent();		
 	}
 	
 	@Test(priority=2)
 	public void TC_RunningAReportInAR_002() throws InterruptedException
 	{
 		ar=hp.NavigateToAdvancedReporting();
-	}
-	
+	}	
 }

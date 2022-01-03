@@ -1,15 +1,11 @@
 package com.ar.PageObjects;
 
-import java.util.logging.Logger;
-
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import com.ar.testcases.BaseClass;
 
 public class LoginPage extends BaseClass{

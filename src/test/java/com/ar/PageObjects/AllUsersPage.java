@@ -1,8 +1,5 @@
 package com.ar.PageObjects;
 
-import java.util.logging.Logger;
-
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -158,6 +155,5 @@ public class AllUsersPage  extends BaseClass{
 	{
 		btnReturnToUsersList.click();
 		logger.info("Clicked on the return to users list button...");
-	}
-	
+	}	
 }

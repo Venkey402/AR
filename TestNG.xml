@@ -5,7 +5,7 @@
 </listeners>
 	<test name ="test : Advanced Reporting">
 		<classes>
-			<class name = "com.ar.testcases.TC_CreateUser_001"/>	
+			<class name = "com.ar.testcases.ValidateAR"/>	
 		</classes>
 	</test>
 </suite>
