@@ -4,6 +4,8 @@
 	<parameter name="Browser" value="chrome" />
 	<listeners>
 		<listener class-name="com.ar.utilities.Reporting" />
+		<listener class-name="com.ar.Utilities.MyTransformer" />
+		<listener class-name="com.ar.Utilities.Reporting" />
 	</listeners>
 	<test name="Test : Advanced Reporting">
 		<classes>
