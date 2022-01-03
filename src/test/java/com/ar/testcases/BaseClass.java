@@ -1,15 +1,9 @@
 package com.ar.testcases;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,9 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
-
 import com.ar.PageObjects.HomePage;
 import com.ar.PageObjects.LoginPage;
 import com.ar.utilities.ReadConfig;
@@ -95,21 +87,5 @@ public class BaseClass {
 	{
 		lp=hp.SignOut();
 	}	
-	@DataProvider(name = "ReadExcel")
-	public Object[][] readfromExcel() throws IOException, EncryptedDocumentException, InvalidFormatException
-	{
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\com\\ar\\testdata\\ValidateAR.xlsx");		
-		Workbook wb = WorkbookFactory.create(fis);
-		Sheet s =wb.getSheet("Sheet1");
-		int rownum = s.getLastRowNum();
-		int Columnnum = s.getRow(0).getLastCellNum();
-		Object[][] testdata = new Object[rownum][Columnnum] ;
-		for(int i=0;i<rownum;i++)
-			for(int j=0;j<Columnnum;j++)
-			{			
-				testdata[i][j]=s.getRow(i).getCell(j).getStringCellValue();
-			}
-		return testdata;
-	}
 	
 }

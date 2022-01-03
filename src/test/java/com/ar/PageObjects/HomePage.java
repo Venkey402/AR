@@ -49,9 +49,7 @@ public class HomePage extends BaseClass {
 	
 	public AllUsersPage NavigateToAllUsers() throws InterruptedException
 	{
-		Thread.sleep(5000);
 		Actions action = new Actions(driver);
-		logger.info("Action class is initiated...");
 		linkAdministation.click();
 		action.moveToElement(linkAllUsers).click(linkAllUsers).build().perform();		
 		logger.info("Navigated to Users > All users...");
