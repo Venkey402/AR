@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ar.testcases.TC_CreateUser_001">
+      <class name="com.ar.testcases.ValidateAR">
         <methods>
-          <include name="setUp"/>
           <include name="TC_RunningAReportInAR_002"/>
+          <include name="setUp"/>
+          <include name="signout"/>
+          <include name="TC_CreateUser_001"/>
           <include name="tearDown"/>
           <include name="login"/>
         </methods>
-      </class> <!-- com.ar.testcases.TC_CreateUser_001 -->
+      </class> <!-- com.ar.testcases.ValidateAR -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
