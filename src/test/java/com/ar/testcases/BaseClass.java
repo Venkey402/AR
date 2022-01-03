@@ -16,6 +16,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import com.ar.PageObjects.HomePage;
 import com.ar.PageObjects.LoginPage;
@@ -34,8 +35,8 @@ public class BaseClass {
 	String password;
 	
 	@BeforeSuite
-	@Parameters({"HeadlessFlag","Browser"})
-	public void setUp(String HeadlessFlag,String Browser) throws IOException
+	
+	public void setUp() throws IOException
 	{
 		logger = Logger.getLogger("Advanced Reporting");
 		PropertyConfigurator.configure("log4j.properties");
@@ -46,7 +47,12 @@ public class BaseClass {
 		logger.info("Read the username '"+username+"' from the config.properties file...");
 		password = rc.getPassword();		
 		logger.info("Read the password '"+password+"' from the config.properties file...");
-		
+	}
+	
+	@BeforeTest
+	@Parameters({"HeadlessFlag","Browser"})
+	public void set(String HeadlessFlag,String Browser)
+	{
 		if(HeadlessFlag.equalsIgnoreCase("Yes"))
 		{	
 			if(Browser.equalsIgnoreCase("safari"))
