@@ -1,11 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite : Advanced Reporting">
-	<parameter name="HeadlessFlag" value="no" />
+	<parameter name="HeadlessFlag" value="yes" />
 	<parameter name="Browser" value="chrome" />
 	<listeners>
 		<listener class-name="com.ar.utilities.Reporting" />
 		<listener class-name="com.ar.utilities.MyTransformer" />
-		<listener class-name="com.ar.utilities.Reporting" />
 	</listeners>
 	<test name="Test : Advanced Reporting">
 		<classes>

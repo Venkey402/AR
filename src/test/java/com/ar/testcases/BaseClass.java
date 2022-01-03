@@ -20,6 +20,7 @@ import org.testng.annotations.Parameters;
 import com.ar.PageObjects.HomePage;
 import com.ar.PageObjects.LoginPage;
 import com.ar.utilities.ReadConfig;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class BaseClass {
 	
@@ -87,9 +88,13 @@ public class BaseClass {
 			{
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
 				driver = new FirefoxDriver();
-			}
-			logger.info(Browser.toUpperCase()+" browser is opened in normal mode... ");
+			}			
 		}
+		if(Browser.equalsIgnoreCase("HTMLUnitDriver"))
+		{
+			driver = new HtmlUnitDriver();
+		}
+		logger.info(Browser.toUpperCase()+" browser is opened in normal mode... ");
 		logger.info("Initiated the chrome driver location...");
 		driver.get(baseUrl);
 		logger.info("Navigated to '"+baseUrl+"'...");
