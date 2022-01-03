@@ -14,11 +14,11 @@ import com.ar.PageObjects.AllUsersPage;
 import com.ar.utilities.XLUtils;
 
 
-public class ValidateAR extends BaseClass{
+public class TC_ValidateAdvancedReporting_001 extends BaseClass{
 	AllUsersPage aup;
 	AdvancedReporting ar;
-	@Test(priority=1,dataProvider="TC_CreateUser_001_TestData")
-	public void TC_CreateUser_001(String username,String password,String LMRole,String TMRole,String Language,String Timezone) throws IOException, InterruptedException
+	@Test(priority=1,dataProvider="CreateUser_TestData",groups= {"sanity","regression"})
+	public void CreateUser(String username,String password,String LMRole,String TMRole,String Language,String Timezone) throws IOException, InterruptedException
 	{		
 		aup=hp.NavigateToAllUsers();
 		Thread.sleep(2000);
@@ -45,13 +45,13 @@ public class ValidateAR extends BaseClass{
 		driver.switchTo().defaultContent();			
 	}
 	
-	@Test(priority=2)
-	public void TC_RunningAReportInAR_002() throws InterruptedException
+	@Test(priority=2,groups= {"regression"})
+	public void RunningAReportInAR() throws InterruptedException
 	{
 		ar=hp.NavigateToAdvancedReporting();
 	}	
 	
-	@DataProvider(name = "TC_CreateUser_001_TestData")
+	@DataProvider(name = "CreateUser_TestData")
 	public Object[][] readfromExcel() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		XLUtils xlutil = new XLUtils();

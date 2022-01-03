@@ -1,14 +1,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite : Advanced Reporting">
-	<parameter name="HeadlessFlag" value="yes" />
+	<parameter name="HeadlessFlag" value="no" />
 	<parameter name="Browser" value="chrome" />
 	<listeners>
 		<listener class-name="com.ar.utilities.Reporting" />
 		<listener class-name="com.ar.utilities.MyTransformer" />
 	</listeners>
 	<test name="Test : Advanced Reporting">
+		<!--<groups>
+			<run>
+				<include name="sanity" />
+			</run>
+		</groups>-->
 		<classes>
-			<class name="com.ar.testcases.ValidateAR" />
+			<class name="com.ar.testcases.TC_ValidateAdvancedReporting_001" />
 		</classes>
 	</test>
 </suite>
